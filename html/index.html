@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Alışveriş Listesi</title>
+  <meta name="description" content="Çevrimdışı da çalışan basit bir alışveriş listesi. PWA denemesi.">
+
+  <!-- PWA için gerekenler -->
+  <link rel="manifest" href="manifest.webmanifest">
+  <meta name="theme-color" content="#2f6f4e">
+
+  <!-- iOS manifest'i tam okumuyor, bunları ayrıca vermek gerekiyor -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Liste">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+
+  <link rel="icon" href="icons/icon-192.png" type="image/png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="ust">
+    <h1>Alışveriş Listesi</h1>
+    <span id="durum" class="durum" title="Bağlantı durumu">çevrimiçi</span>
+  </header>
+
+  <main>
+    <form id="form" class="ekle" autocomplete="off">
+      <input id="girdi" type="text" placeholder="Ne alınacak?" required maxlength="60">
+      <button type="submit" aria-label="Ekle">+</button>
+    </form>
+
+    <ul id="liste" class="liste"></ul>
+
+    <p id="bos" class="bos">Liste boş. Bir şeyler ekle.</p>
+
+    <div class="alt">
+      <span id="sayac"></span>
+      <button id="temizle" class="link" type="button">Alınanları sil</button>
+    </div>
+  </main>
+
+  <!-- beforeinstallprompt gelene kadar gizli -->
+  <button id="yukle" class="yukle" type="button" hidden>
+    Ana ekrana ekle
+  </button>
+
+  <script src="app.js"></script>
+</body>
+</html>

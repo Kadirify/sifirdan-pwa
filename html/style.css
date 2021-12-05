@@ -1,0 +1,180 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --yesil: #2f6f4e;
+  --yesil-acik: #e4f1ea;
+  --gri: #777;
+  --cizgi: #e3e3e3;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: #f6f6f4;
+  color: #222;
+  /* standalone modda status bar'ın altına girmesin */
+  padding-top: env(safe-area-inset-top);
+}
+
+.ust {
+  background: var(--yesil);
+  color: #fff;
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ust h1 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.durum {
+  font-size: 12px;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.durum.kapali {
+  background: #c0392b;
+}
+
+main {
+  max-width: 520px;
+  margin: 0 auto;
+  padding: 20px 16px 90px;
+}
+
+.ekle {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.ekle input {
+  flex: 1;
+  font-size: 16px; /* 16'nın altı iOS'ta zoom yapıyor */
+  padding: 12px 14px;
+  border: 1px solid var(--cizgi);
+  border-radius: 10px;
+  background: #fff;
+}
+
+.ekle input:focus {
+  outline: 2px solid var(--yesil);
+  border-color: transparent;
+}
+
+.ekle button {
+  width: 48px;
+  font-size: 24px;
+  border: none;
+  border-radius: 10px;
+  background: var(--yesil);
+  color: #fff;
+  cursor: pointer;
+}
+
+.liste {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.liste:empty {
+  display: none;
+}
+
+.liste li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--cizgi);
+}
+
+.liste li:last-child {
+  border-bottom: none;
+}
+
+.liste input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  accent-color: var(--yesil);
+  flex-shrink: 0;
+}
+
+.liste .ad {
+  flex: 1;
+  font-size: 16px;
+}
+
+.liste li.alindi .ad {
+  text-decoration: line-through;
+  color: var(--gri);
+}
+
+.liste .sil {
+  border: none;
+  background: none;
+  color: #bbb;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 0 4px;
+}
+
+.liste .sil:hover {
+  color: #c0392b;
+}
+
+.bos {
+  text-align: center;
+  color: var(--gri);
+  margin: 40px 0;
+}
+
+.bos.gizli {
+  display: none;
+}
+
+.alt {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 14px;
+  font-size: 13px;
+  color: var(--gri);
+}
+
+.link {
+  border: none;
+  background: none;
+  color: var(--yesil);
+  font-size: 13px;
+  cursor: pointer;
+  padding: 0;
+}
+
+.yukle {
+  position: fixed;
+  left: 50%;
+  bottom: 20px;
+  transform: translateX(-50%);
+  padding: 12px 22px;
+  border: none;
+  border-radius: 999px;
+  background: #222;
+  color: #fff;
+  font-size: 15px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+}
