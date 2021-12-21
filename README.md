@@ -16,6 +16,27 @@ Türkçe kaynak bulamadığım için kendim not alarak öğrendim, notlar da bu 
   <img src="docs/img/react-guncelleme.png" width="260" alt="react sürümünde güncelleme bildirimi">
 </p>
 
+## PWA ne işe yarar
+
+Normal bir siteyle PWA arasındaki fark kullanıcı tarafında şöyle görünüyor:
+
+- Site ana ekrana ikon olarak ekleniyor, ikona basınca adres çubuğu olmadan tam ekran açılıyor.
+  Kullanıcı için uygulamadan farkı yok.
+- İnternet yokken de açılıyor. Metroda, asansörde, çekmeyen yerde sayfa boş kalmıyor,
+  en azından son hali görünüyor. Bu repodaki liste uygulaması tamamen çevrimdışı çalışıyor.
+- İkinci açılış çok hızlı, çünkü dosyalar zaten telefonda.
+- Android'de bildirim gönderebiliyorsun (bu repoda yok, ayrı bir konu).
+
+Geliştirici tarafında ise:
+
+- Mağazaya yüklemiyorsun, onay beklemiyorsun, yıllık ücret yok.
+- Tek kod tabanı. Siten zaten varsa iki dosya ekleyip PWA'ya çeviriyorsun, yeniden yazmıyorsun.
+- Güncelleme anında gidiyor, kullanıcının mağazadan güncellemesine gerek yok.
+
+Ne zaman yetmez: Bluetooth, NFC, arka planda sürekli çalışma, iPhone'da bildirim gibi
+şeyler lazımsa native'e bakman gerekiyor. İçerik gösteren, form dolduran, liste tutan
+uygulamaların çoğu için fazlasıyla yeterli.
+
 ## İçindekiler
 
 1. [PWA nedir, ne değildir](docs/01-pwa-nedir.md)
