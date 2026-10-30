@@ -54,6 +54,25 @@ uygulamaların çoğu için fazlasıyla yeterli.
 8. [Başıma gelen sorunlar](docs/sik-sorunlar.md)
 9. [Claude veya Codex ile sitene ekle](docs/ai-ile-ekle.md) (2026)
 
+## Claude veya Codex ile sitene ekle
+
+Elle uğraşmak istemiyorsan bu işi bir kodlama ajanına yaptırabilirsin. Projenin klasöründe
+Claude Code, Codex ya da Cursor'ı aç ve şunu yapıştır:
+
+```
+Şu sayfadaki talimatları oku ve bu projeye uygula:
+https://raw.githubusercontent.com/Kadirify/sifirdan-pwa/master/docs/ai-ile-ekle.md
+
+Uygulama adı: ......
+Tema rengi: ......
+Logo/ikon dosyası: ...... (yoksa mevcut favicon'dan üret)
+```
+
+Ajan proje tipini (düz HTML, Vite, Next.js, CRA...) kendisi anlıyor, ikonları üretiyor,
+manifest ve service worker'ı ekliyor, sonunda ne yaptığını listeliyor. Boşlukları
+doldurmazsan sitenin başlığından, renginden ve favicon'undan tahmin ediyor.
+Talimatların tamamı ve İngilizce prompt: [docs/ai-ile-ekle.md](docs/ai-ile-ekle.md)
+
 ## Klasörler
 
 ```
