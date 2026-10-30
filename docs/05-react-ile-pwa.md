@@ -86,9 +86,8 @@ en az uğraştıranı. Context de olurdu ama bu kadarcık şey için fazla.
    `index.html` dön. SPA olduğu için `/liste` gibi bir adrese gidince de index lazım
 3. `public/` altındaki png'ler için ayrı bir kural. Bunlar precache'e girmiyor çünkü
    workbox sadece webpack'ten geçen dosyaları biliyor, `public/` altı olduğu gibi
-   kopyalanıyor. Onlar için `StaleWhileRevalidate`: önbellekten ver, arkada güncelle
-
-Şablonun orijinalinde Google Analytics için bir kural daha vardı, kullanmadığım için çıkardım.
+   kopyalanıyor. Onlar için `StaleWhileRevalidate`: önbellekten ver, arkada güncelle.
+   Bu kural şablonda zaten var, ben sadece yorumlarını Türkçeleştirdim.
 
 ## Hook'lar
 

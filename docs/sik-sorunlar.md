@@ -16,8 +16,9 @@ En klasik olanı. Sebebi service worker önbellekten veriyor.
 
 - Console'da sw hatası var mı? Sw kurulmadıysa event gelmiyor
 - Application > Manifest > en altta "Installability" bölümü neyin eksik olduğunu yazıyor
-- Daha önce "yükle" teklifini reddettiysen Chrome bir süre bir daha sormuyor.
-  Gizli pencerede dene ya da `chrome://flags` içinde `#bypass-app-banner-engagement-checks` aç
+- 30 saniye / tıklama şartı yüzünden sayfayı açar açmaz gelmiyor. Denerken
+  `chrome://flags` içinde `#bypass-app-banner-engagement-checks` aç
+- Gizli pencerede hiç gelmiyor, Chrome gizli modda yüklemeye izin vermiyor
 - Zaten yüklüyse gelmiyor. `chrome://apps` içinden kaldır
 - Safari'de hiç gelmiyor, bu normal
 
@@ -53,7 +54,9 @@ eklemen lazım, CRA yolları ona göre üretiyor.
 
 ## iPhone'da Safari içinde açılıyor, tam ekran değil
 
-`<meta name="apple-mobile-web-app-capable" content="yes">` yok.
+iOS 11.3'ten beri manifest'teki `display: standalone` okunuyor. Önce manifest'in gerçekten
+yüklendiğine bak (Safari'de Web Inspector). Daha eski iOS'ları da kapsamak için
+`<meta name="apple-mobile-web-app-capable" content="yes">` eklemek zarar vermez.
 
 ## Android'de ikon kesik, kenarları gitmiş
 

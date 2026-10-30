@@ -215,5 +215,5 @@ Bu repodaki anlatımlar 2021 sonu itibariyle yazıldı. Ajanın bilmesi gereken 
 - Lighthouse 12 ile "PWA" kategorisi kaldırıldı. Kontrol DevTools > Application'da.
 - `next-pwa` bakımsız, yerine `@serwist/next`. CRA yerine çoğu kişi Vite kullanıyor,
   `vite-plugin-pwa` fiilen standart.
-- Manifest'te `id` alanı eklendi; aynı origin'de birden fazla PWA varsa gerekli, tek
-  uygulama için şart değil.
+- Manifest'teki `id` alanı (Chrome 96, Kasım 2021) artık her yerde destekleniyor;
+  aynı origin'de birden fazla PWA varsa gerekli, tek uygulama için şart değil.

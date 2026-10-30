@@ -63,8 +63,10 @@ Kayıt işini `components/SwKayit.tsx` yapıyor: `"use client"` bir bileşen, `u
 içinde `register("/sw.js")` çağırıyor, hiçbir şey render etmiyor. Layout'a bir kere
 koyuyorsun, her sayfada çalışıyor. Sadece production'da; dev'de `return`.
 
-`next.config.ts` içinde `/sw.js` için `Cache-Control: no-cache` header'ı var. Yoksa
-tarayıcı sw dosyasının kendisini bir saat önbellekleyebiliyor ve yeni sürüm geç geliyor.
+`next.config.ts` içinde `/sw.js` için `Cache-Control: no-cache` header'ı var. Chrome
+güncelleme kontrolünde sw dosyası için HTTP önbelleğini zaten atlıyor, ama araya giren
+bir CDN ya da proxy eski dosyayı tutmasın diye ekledim. Next'in kendi PWA rehberi de
+aynısını öneriyor.
 
 Workbox ya da Serwist kullanmadım. Bu kadar küçük bir uygulama için 60 satırlık düz sw
 yeterli ve ne yaptığı belli. Büyük bir projede, özellikle route çoksa, `@serwist/next`

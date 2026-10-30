@@ -84,8 +84,9 @@ standalone için de meta etiketi:
 <meta name="apple-mobile-web-app-title" content="Liste">
 ```
 
-Bunlar olmadan iPhone'da ana ekrana eklenen şey sayfanın küçük bir ekran görüntüsü
-oluyor ve Safari içinde açılıyor. `apple-touch-icon` için 180x180 öneriyorlar ama 192
+`apple-touch-icon` olmadan iPhone'da ana ekrana eklenen şey sayfanın küçük bir ekran
+görüntüsü oluyor. Standalone için iOS 11.3'ten beri manifest yetiyor, meta etiketi daha
+eski sürümler için. `apple-touch-icon` için 180x180 öneriyorlar ama 192
 de sorunsuz çalışıyor, ayrıca üretmeye üşendim.
 
 ## Kontrol

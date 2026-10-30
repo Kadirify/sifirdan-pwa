@@ -18,9 +18,10 @@ Chrome'un 2021 sonu itibariyle istedikleri:
   192 ve 512'lik ikonlar
 - `fetch` handler'ı olan bir service worker. Boş bir `fetch` listener'ı bile yeterli
   ama Chrome bunu da yakında kaldıracakmış, gerçekten çevrimdışı çalışması gerekecek
-- Kullanıcı sayfayla en az bir kere etkileşmiş olmalı (tıklama, dokunma)
+- Kullanıcı sayfaya en az bir kere tıklamış ya da dokunmuş olmalı
+- Sayfada toplam en az 30 saniye geçirmiş olmalı
 
-Eskiden "iki ayrı gün ziyaret etmiş olmalı" gibi bir şart da vardı, 2021'de kalktı.
+Çok eskiden "iki ayrı gün ziyaret etmiş olmalı" gibi bir şart da vardı, o 2018 civarında kalktı.
 Bu kriterler sürekli değişiyor, güncel liste için `web.dev/install-criteria` sayfasına bak.
 
 ## beforeinstallprompt
@@ -53,8 +54,11 @@ yukleBtn.addEventListener('click', function () {
 ```
 
 `prompt()` bir kere çalışıyor. Kullanıcı reddettiyse aynı event ile tekrar çağıramazsın,
-`null`'a çekip butonu gizlemek lazım. Kullanıcı reddederse Chrome bir süre (sanırım
-3 ay) eventi bir daha göndermiyor, o yüzden butonu zorla gösterme, zaten gelmez.
+`null`'a çekip butonu gizlemek lazım. Sayfa yenilenince event tekrar geliyor, yani
+kullanıcı bir kere "hayır" dedi diye buton sonsuza kadar kaybolmuyor. Her açılışta
+sormak da kullanıcıyı darlıyor; gerçek bir projede reddedenleri localStorage'a yazıp bir
+daha göstermemek mantıklı, bu örnekte uğraşmadım. (Chrome'un kendi alttan çıkan barı ise reddedilince uzun süre çıkmıyor,
+o ayrı bir şey.)
 
 Yüklendikten sonra `appinstalled` eventi geliyor, butonu orada da gizliyorum.
 

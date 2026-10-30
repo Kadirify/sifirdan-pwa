@@ -21,7 +21,7 @@ npx lighthouse http://localhost:8000 --only-categories=pwa --view
 Dikkat edilecek şey: Lighthouse'u `localhost`'ta çalıştırınca HTTPS kontrolünü geçiyor
 ama gerçek sunucuda HTTP ise geçmiyor. Deploy ettikten sonra bir daha çalıştır.
 
-Lighthouse puanı 100 olması her şeyin iyi çalıştığı anlamına gelmiyor. Sadece
+PWA rozetinin yeşil olması her şeyin iyi çalıştığı anlamına gelmiyor. Sadece
 "yüklenebilir" ve bazı temel şeyler. Çevrimdışıyken uygulamanın gerçekten işe yarayıp
 yaramadığını elle denemen lazım.
 

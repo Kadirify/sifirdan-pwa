@@ -7,7 +7,7 @@ Service worker, sayfadan ayrı bir thread'de çalışan bir JS dosyası. DOM'a e
 verebiliyor. Önbellekten cevap verirse ağa hiç gitmiyor, dolayısıyla internet olmasa da
 sayfa açılıyor.
 
-Repodaki hali: [`html/sw.js`](../html/sw.js), 60 satır.
+Repodaki hali: [`html/sw.js`](../html/sw.js), yorumlarla birlikte 65 satır.
 
 ## Kaydetmek
 

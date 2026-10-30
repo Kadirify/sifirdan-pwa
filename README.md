@@ -23,24 +23,12 @@ Türkçe kaynak bulamadığım için kendim not alarak öğrendim, notlar da bu 
 
 ## PWA ne işe yarar
 
-Normal bir siteyle PWA arasındaki fark kullanıcı tarafında şöyle görünüyor:
+Site ana ekrana ikon olarak ekleniyor, açılınca adres çubuğu yok, internet yokken de
+açılıyor. Kullanıcı için uygulamadan pek farkı kalmıyor. Senin için de mağaza yok, onay
+beklemek yok, güncelleme anında gidiyor. Siten zaten varsa iki dosya ekleyip PWA yapıyorsun.
 
-- Site ana ekrana ikon olarak ekleniyor, ikona basınca adres çubuğu olmadan tam ekran açılıyor.
-  Kullanıcı için uygulamadan farkı yok.
-- İnternet yokken de açılıyor. Metroda, asansörde, çekmeyen yerde sayfa boş kalmıyor,
-  en azından son hali görünüyor. Bu repodaki liste uygulaması tamamen çevrimdışı çalışıyor.
-- İkinci açılış çok hızlı, çünkü dosyalar zaten telefonda.
-- Android'de bildirim gönderebiliyorsun (bu repoda yok, ayrı bir konu).
-
-Geliştirici tarafında ise:
-
-- Mağazaya yüklemiyorsun, onay beklemiyorsun, yıllık ücret yok.
-- Tek kod tabanı. Siten zaten varsa iki dosya ekleyip PWA'ya çeviriyorsun, yeniden yazmıyorsun.
-- Güncelleme anında gidiyor, kullanıcının mağazadan güncellemesine gerek yok.
-
-Ne zaman yetmez: Bluetooth, NFC, arka planda sürekli çalışma, iPhone'da bildirim gibi
-şeyler lazımsa native'e bakman gerekiyor. İçerik gösteren, form dolduran, liste tutan
-uygulamaların çoğu için fazlasıyla yeterli.
+Bluetooth, NFC, arka planda sürekli çalışma gibi şeyler lazımsa yetmiyor, o zaman native.
+Liste tutan, form dolduran, içerik gösteren şeyler için fazlasıyla yeterli.
 
 ## İçindekiler
 
@@ -56,8 +44,7 @@ uygulamaların çoğu için fazlasıyla yeterli.
 
 ## Claude veya Codex ile sitene ekle
 
-Elle uğraşmak istemiyorsan bu işi bir kodlama ajanına yaptırabilirsin. Projenin klasöründe
-Claude Code, Codex ya da Cursor'ı aç ve şunu yapıştır:
+Projenin klasöründe Claude Code ya da Codex'i açıp şunu yapıştırman yeterli:
 
 ```
 Şu sayfadaki talimatları oku ve bu projeye uygula:
@@ -68,10 +55,7 @@ Tema rengi: ......
 Logo/ikon dosyası: ...... (yoksa mevcut favicon'dan üret)
 ```
 
-Ajan proje tipini (düz HTML, Vite, Next.js, CRA...) kendisi anlıyor, ikonları üretiyor,
-manifest ve service worker'ı ekliyor, sonunda ne yaptığını listeliyor. Boşlukları
-doldurmazsan sitenin başlığından, renginden ve favicon'undan tahmin ediyor.
-Talimatların tamamı ve İngilizce prompt: [docs/ai-ile-ekle.md](docs/ai-ile-ekle.md)
+Ayrıntısı: [docs/ai-ile-ekle.md](docs/ai-ile-ekle.md)
 
 ## Klasörler
 
@@ -123,7 +107,7 @@ npm start
 
 2021'deki kısımlar:
 
-- Chrome 96, Android 11 ve iOS 15 Safari'de denedim
+- Chrome 96, Android 11 ve iOS 15 Safari'de denedim (ekran görüntüleri masaüstü Chrome'un mobil görünümünden)
 - Node 16, npm 8
 - react 17.0.2, react-scripts 4.0.3, workbox 5
 
