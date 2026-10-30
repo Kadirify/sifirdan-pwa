@@ -131,11 +131,17 @@ ya da build adımı varsa adı otomatik üretecek küçük bir script ekle.
 **Vite:** `vite-plugin-pwa` kur, `vite.config` içine `VitePWA({ registerType: 'autoUpdate', manifest: {...} })`
 ekle. Manifesti plugin'e ver, ayrı dosya yazma. `workbox.globPatterns` ile statik dosyaları kapsa.
 
-**Next.js:** Önce projede `next-pwa` ya da `@serwist/next` var mı bak. Yoksa `@serwist/next`
-kur (next-pwa artık bakımda değil). `app/sw.ts` ile `next.config` sarmalamasını Serwist'in
-güncel dokümanına göre yap; sürüm uyumsuzluğu çıkarsa kullanıcıya söyle, zorla eski sürüm kurma.
-Manifest için `app/manifest.ts` kullan, Next linki kendisi ekliyor. Projede `output: 'export'`
-varsa statik site gibi davran ve düz `sw.js` yaklaşımını kullan.
+**Next.js (app router):** Bu repodaki [`nextjs/`](../nextjs/) klasörü birebir şablon.
+`app/manifest.ts`, `components/SwKayit.tsx`, `public/sw.js` ve `next.config.ts`'teki
+`headers()` bloğunu oradan al; `app/layout.tsx`'teki `metadata.appleWebApp`, `metadata.icons`
+ve `viewport.themeColor` alanlarını projenin layout'una ekle. Manifest linkini Next kendisi
+koyuyor, elle `<link rel="manifest">` yazma. Sw'deki `/_next/static/` cache-first ve
+`navigate` için network-first kuralı Next'e özel, değiştirme. Proje zaten `@serwist/next`
+ya da `next-pwa` kullanıyorsa onları bozma, sadece manifest ve ikonları tamamla. Çok route'lu
+büyük projede ve kullanıcı isterse `@serwist/next`'e geç; sürüm uyumsuzluğu çıkarsa kullanıcıya
+söyle, zorla eski sürüm kurma. `output: 'export'` varsa `headers()` çalışmaz, sw header'ını
+kullanıcının sunucusunda vermesi gerektiğini söyle. Pages router'da aynı dosyalar
+`pages/_document` ve `public/manifest.webmanifest` ile kullanılır.
 
 **Create React App:** `src/service-worker.js` ve `src/serviceWorkerRegistration.js` dosyalarını
 bu repodaki [`react/src/`](../react/src/) klasöründen al, `index.js`'te `register()` çağır,

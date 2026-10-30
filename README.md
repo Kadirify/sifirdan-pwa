@@ -8,6 +8,11 @@ Bir web sitesini telefona "yüklenebilir" hale getirmek için ne gerekiyor, adı
 Türkçe kaynak bulamadığım için kendim not alarak öğrendim, notlar da bu repo oldu.
 Örnek uygulama olarak internet yokken de çalışan küçük bir alışveriş listesi var.
 
+> **Ekim 2026 güncellemesi.** Repo 2021'de yazıldı, anlatımlar hâlâ geçerli ama iki şey ekledim:
+> aynı uygulamanın [Next.js 16 sürümü](nextjs/) ve bu işi Claude Code / Codex gibi bir ajana
+> yaptırmak için hazır talimat sayfası: [docs/ai-ile-ekle.md](docs/ai-ile-ekle.md).
+> Linki ajana verip "siteme entegre et" demen yeterli.
+
 <p>
   <img src="docs/img/html-ekran.png" width="260" alt="uygulama">
   &nbsp;&nbsp;
@@ -45,13 +50,16 @@ uygulamaların çoğu için fazlasıyla yeterli.
 4. [Ana ekrana ekle butonu](docs/04-ana-ekrana-ekle.md)
 5. [React ile aynı şeyi yapmak](docs/05-react-ile-pwa.md)
 6. [Test etmek, Lighthouse](docs/06-test-ve-lighthouse.md)
-7. [Başıma gelen sorunlar](docs/sik-sorunlar.md)
+7. [Next.js ile PWA](docs/07-nextjs-ile-pwa.md) (2026)
+8. [Başıma gelen sorunlar](docs/sik-sorunlar.md)
+9. [Claude veya Codex ile sitene ekle](docs/ai-ile-ekle.md) (2026)
 
 ## Klasörler
 
 ```
 html/    düz html + css + js, kütüphane yok, 5 dosya
-react/   create-react-app ile aynı uygulama (react 17, workbox)
+react/   create-react-app ile aynı uygulama (react 17, workbox), 2021
+nextjs/  next.js 16 ile aynı uygulama, 2026
 docs/    anlatımlar ve görseller
 ```
 
@@ -83,13 +91,25 @@ npm run build
 npx serve -s build
 ```
 
+Next.js sürümü:
+
+```
+cd nextjs
+npm install
+npm run build
+npm start
+```
+
 ## Hangi sürümlerle yazdım
+
+2021'deki kısımlar:
 
 - Chrome 96, Android 11 ve iOS 15 Safari'de denedim
 - Node 16, npm 8
 - react 17.0.2, react-scripts 4.0.3, workbox 5
 
-Bunlar ilerde değişir, özellikle Chrome tarafında yükleme kriterleri sürekli oynuyor.
+2026 eki: Next.js 16.4, React 19, Node 22. Chrome tarafında yükleme kriterleri arada
+değişti, farklar [docs/ai-ile-ekle.md](docs/ai-ile-ekle.md) sonunda listeli.
 Takılırsan [sorunlar](docs/sik-sorunlar.md) sayfasına bir bak, yoksa issue aç.
 
 ## Lisans
