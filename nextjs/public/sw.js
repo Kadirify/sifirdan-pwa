@@ -38,8 +38,10 @@ self.addEventListener("fetch", (e) => {
         (c) =>
           c ||
           fetch(request).then((r) => {
-            const kopya = r.clone();
-            caches.open(CACHE).then((cache) => cache.put(request, kopya));
+            if (r.ok) {
+              const kopya = r.clone();
+              caches.open(CACHE).then((cache) => cache.put(request, kopya));
+            }
             return r;
           })
       )
@@ -52,8 +54,11 @@ self.addEventListener("fetch", (e) => {
     e.respondWith(
       fetch(request)
         .then((r) => {
-          const kopya = r.clone();
-          caches.open(CACHE).then((cache) => cache.put(request, kopya));
+          // 404 ya da 500 sayfasını önbelleğe koyma, sonra çevrimdışıyken onu gösterir
+          if (r.ok) {
+            const kopya = r.clone();
+            caches.open(CACHE).then((cache) => cache.put(request, kopya));
+          }
           return r;
         })
         .catch(() => caches.match(request).then((c) => c || caches.match("/")))
